@@ -1,6 +1,9 @@
 import React from "react"
 import BarChard from "./chard/BarChard"
 import {data} from "./data/data"
+import AppRouter from "./Router/AppRouter";
+import HomePage from "./Router/HomePage";
+import NavBar from "./Router/NavBar";
 
 
 class Container extends React.Component{
@@ -13,8 +16,24 @@ class Container extends React.Component{
        isEnjoyment: true,
       }
      this.calculateAverageEnjoymentRate = this.calculateAverageEnjoymentRate.bind(this);
+     this.studentArray = this.studentArray.bind(this)
+     this.setStudentState = this.setStudentState.bind(this)
     }
-
+    
+    studentArray = () =>{
+        const students = data.map((item)=> item.name)
+        const singleStudents = Array.from(new Set(students))
+        return singleStudents
+        //  singleStudents.
+}
+setStudentState = ()=>{
+    const studentArray = this.studentArray();
+    console.log(studentArray)
+   return studentArray.map(student =>{
+       return data.filter((obj)=>obj.name === student)   
+   })
+}
+   
     calculateAverageEnjoymentRate = () => {
         const assignments = data.map((item) => item.assignment); // makes array from all assignments
         const singleAssignments =Array.from(new Set(assignments)) // makes array with unique assignments
@@ -50,12 +69,18 @@ class Container extends React.Component{
       componentDidMount = ()=>{
         const assignmentObject = this.calculateAverageEnjoymentRate();
         this.setState({ assignments:assignmentObject})
+
+        const StudentObjects = this.studentArray();
+        this.setState({students:data})
+        
       }
      
     render(){
     return(
         <div>
-        <BarChard data={this.state.assignments}/>
+            {console.log(this.setStudentState())}
+        <NavBar students={this.studentArray()}/> 
+        <AppRouter students={this.studentArray()} data={this.state.assignments} studentData={this.state.students}/>
         </div>
     )}
 
