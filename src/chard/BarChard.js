@@ -9,10 +9,16 @@ function BarChard (props){
       height={250}
       width={900}
       >
-        <VictoryAxis
+        <VictoryAxis dependentAxis
         style={{ ticks: {stroke: "grey", size: 5},
         tickLabels: {angle: 45, fontSize: 5, padding: 5, textAnchor: 'begin'} }}
         />
+        <VictoryAxis 
+        style={{ ticks: {stroke: "grey", size: 5},
+        tickLabels: {angle: 45, fontSize: 5, padding: 2, textAnchor: 'begin'} }}
+        />
+        
+        
       <VictoryGroup
       offset={5}
       colorScale={"qualitative"}
