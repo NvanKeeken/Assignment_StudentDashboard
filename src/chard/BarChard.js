@@ -18,23 +18,28 @@ function BarChard (props){
         tickLabels: {angle: 45, fontSize: 5, padding: 2, textAnchor: 'begin'} }}
         />
         
-        
       <VictoryGroup
       offset={5}
       colorScale={"qualitative"}
       >
+      {props.data.isDifficult ?
       <VictoryBar
       style={{ data: { fill: "#ffb212" } }}
-      data={props.data}
+      data={props.chardData}
       x={"assignment"}
       y={"difficultyRate"}
-      />
+      /> 
+    : null}
+
+     { props.data.isEnjoyment ?
       <VictoryBar
-      data={props.data}
+      data={props.chardData}
       style={{ data: { fill: "#4f8bc9" } }}
       x={"assignment"}
       y={"enjoymentRate"}
       />
+      : null
+     }
       </VictoryGroup>
       </VictoryChart>
     )

@@ -74,13 +74,20 @@ setStudentState = ()=>{
         this.setState({students:data})
         
       }
+
+      handleChange = (event)=>{
+       const {name,checked} = event.target;
+       this.setState({
+        [name]: checked
+       })
+      }
      
     render(){
     return(
         <div>
             {console.log(this.setStudentState())}
         <NavBar students={this.studentArray()}/> 
-        <AppRouter students={this.studentArray()} data={this.state.assignments} studentData={this.state.students}/>
+        <AppRouter students={this.studentArray()} data={this.state} studentData={this.state.students} onChange={this.handleChange}/>
         </div>
     )}
 
