@@ -14,6 +14,7 @@ class Container extends React.Component{
         students:[],
        isDifficult:true,
        isEnjoyment: true,
+       isLineChard: false,
       }
      this.calculateAverageEnjoymentRate = this.calculateAverageEnjoymentRate.bind(this);
      this.studentArray = this.studentArray.bind(this)
