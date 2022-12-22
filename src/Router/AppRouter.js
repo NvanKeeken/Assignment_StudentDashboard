@@ -3,12 +3,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import StudentPage from "./StudentPage"
 import HomePage from "./HomePage"
 
+
+
 function AppRouter(props){
    
     return(
         <BrowserRouter>
         <Routes>
-        <Route path="" element={<HomePage data={props.data} onChange ={props.onChange}/>}/>
+        <Route path="" element={<HomePage data={props.data} onChange ={props.onChange} sortRating={props.sortRating}/>}/>
 
       {props.students.map(student => {
        return <Route 

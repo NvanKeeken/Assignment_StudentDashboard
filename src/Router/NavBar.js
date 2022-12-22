@@ -6,9 +6,9 @@ function NavBar (props){
       return  <li key={student}><a href={`http://localhost:3000/${student}`}>{student}</a></li>
     })
     return(
-     <div>
-       <ul>
-        <li><a href="http://localhost:3000">Home</a></li>
+     <div style={{backgroundColor: "red"}}>
+       <ul style={{display:"flex",listStyle:"none"}}>
+        <li ><a href="http://localhost:3000">Home</a></li>
         {listItem}
        </ul>
      </div>

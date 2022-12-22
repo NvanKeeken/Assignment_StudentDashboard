@@ -5,10 +5,11 @@ function LineChard(props) {
   return (
     <div>
       <VictoryChart
+        domainPadding={{x:15}}
+        domain={{ x: [0, 56], y: [0.0, 5.0] }}
         theme={VictoryTheme.material}
-        domainPadding={50}
-        height={250}
-        width={900}
+        height={300}
+        width={1500}
       >
         <VictoryAxis
           dependentAxis

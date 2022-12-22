@@ -4,6 +4,7 @@ import {data} from "./data/data"
 import AppRouter from "./Router/AppRouter";
 import HomePage from "./Router/HomePage";
 import NavBar from "./Router/NavBar";
+import ProfileData from "./data/mockData";
 
 
 class Container extends React.Component{
@@ -12,12 +13,14 @@ class Container extends React.Component{
       this.state = {
         assignments:[],
         students:[],
+        profiles:[],
        isDifficult:true,
        isEnjoyment: true,
        isLineChard: false,
       }
      this.calculateAverageEnjoymentRate = this.calculateAverageEnjoymentRate.bind(this);
      this.studentArray = this.studentArray.bind(this)
+     this.assignmentArray = this.assignmentArray.bind(this)
      this.setStudentState = this.setStudentState.bind(this)
     }
     
@@ -27,9 +30,15 @@ class Container extends React.Component{
         return singleStudents
         //  singleStudents.
 }
+
+assignmentArray = () =>{
+    const assignments = data.map((item)=> item.assignment)
+    const singleAssignments = Array.from(new Set(assignments))
+    
+    return singleAssignments
+}
 setStudentState = ()=>{
     const studentArray = this.studentArray();
-    console.log(studentArray)
    return studentArray.map(student =>{
        return data.filter((obj)=>obj.name === student)   
    })
@@ -70,9 +79,8 @@ setStudentState = ()=>{
       componentDidMount = ()=>{
         const assignmentObject = this.calculateAverageEnjoymentRate();
         this.setState({ assignments:assignmentObject})
-
-        const StudentObjects = this.studentArray();
         this.setState({students:data})
+        this.setState({profiles: ProfileData })
         
       }
 
@@ -83,12 +91,27 @@ setStudentState = ()=>{
        })
       }
      
+      sortRating = (e, prop) => {
+         const ratingAscending = [...this.state.assignments].sort((a,b)=> prop === "difficultyRate"?
+         a.difficultyRate -b.difficultyRate: a.enjoymentRate - b.enjoymentRate)
+  
+        const ratingDescending = [...this.state.assignments].sort(
+          (a, b) => prop === "difficultyRate" ? b.difficultyRate - a.difficultyRate : b.enjoymentRate - a.enjoymentRate
+        )
+
+        e.target.value === "lowToHigh"
+          ? this.setState({ assignments: ratingAscending })
+          : this.setState({ assignments: ratingDescending });
+      };
+
+      
+    
     render(){
     return(
         <div>
-            {console.log(this.setStudentState())}
+            {console.log(ProfileData.last_name)}
         <NavBar students={this.studentArray()}/> 
-        <AppRouter students={this.studentArray()} data={this.state} studentData={this.state.students} onChange={this.handleChange}/>
+        <AppRouter students={this.studentArray()} assignments={this.assignmentArray()} data={this.state} studentData={this.state.students} onChange={this.handleChange} sortRating={this.sortRating}/>
         </div>
     )}
 

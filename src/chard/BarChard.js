@@ -1,13 +1,16 @@
 import React from "react"
-import {VictoryBar, VictoryChart, VictoryAxis,VictoryGroup} from "victory"
+import {VictoryBar, VictoryChart, VictoryAxis,VictoryGroup,VictoryTheme} from "victory"
 
 function BarChard (props){
 
     return(
         <VictoryChart
-      domainPadding={50}
-      height={250}
-      width={900}
+      domainPadding={{x:15}}
+      domain={{ x: [0, 56], y: [0.0, 5.0] }}
+      theme={VictoryTheme.material}
+      height={300}
+      width={1000}
+      padding={{bottom:100,left:50, right: 50}}
       >
         <VictoryAxis dependentAxis
         style={{ ticks: {stroke: "grey", size: 5},
@@ -15,11 +18,11 @@ function BarChard (props){
         />
         <VictoryAxis 
         style={{ ticks: {stroke: "grey", size: 5},
-        tickLabels: {angle: 45, fontSize: 5, padding: 2, textAnchor: 'begin'} }}
+        tickLabels: {angle: 45, fontSize: 5, padding: 1, textAnchor: 'begin'} }}
         />
         
       <VictoryGroup
-      offset={5}
+      offset={6}
       colorScale={"qualitative"}
       >
       {props.data.isDifficult ?
