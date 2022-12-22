@@ -10,8 +10,8 @@ function StudentPage (props){
      
      <div>
          
-        <div>
-                 <img src={props.data.profiles.photo}></img>
+        <div className="profile">
+                 <img className="profile-picture" src={props.data.profiles.photo}></img>
                  <p>name: {props.student} {props.data.profiles.last_name}</p> 
                  <p>e-mail: {props.data.profiles.email}</p>
                  <p>phone-number: {props.data.profiles.phone}</p>

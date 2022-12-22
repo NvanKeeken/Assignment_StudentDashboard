@@ -10,8 +10,7 @@ function AppRouter(props){
     return(
         <BrowserRouter>
         <Routes>
-        <Route path="" element={<HomePage data={props.data} onChange ={props.onChange} sortRating={props.sortRating}/>}/>
-
+        <Route path="" element={<HomePage data={props.data} onChange ={props.onChange} students ={props.students} sortRating={props.sortRating}/>}/>
       {props.students.map(student => {
        return <Route 
        path={`/${student}`} 
@@ -20,7 +19,9 @@ function AppRouter(props){
        data = {props.data}
        students={props.students} 
        studentData={props.studentData}
-       onChange={props.onChange}/>} /> 
+       onChange={props.onChange}
+       handledropMenu={props.handledropMenu}
+       />} /> 
     })}
         </Routes>
         </BrowserRouter>

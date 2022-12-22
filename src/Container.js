@@ -7,6 +7,8 @@ import NavBar from "./Router/NavBar";
 import ProfileData from "./data/mockData";
 
 
+
+
 class Container extends React.Component{
     constructor(){
         super();
@@ -22,6 +24,8 @@ class Container extends React.Component{
      this.studentArray = this.studentArray.bind(this)
      this.assignmentArray = this.assignmentArray.bind(this)
      this.setStudentState = this.setStudentState.bind(this)
+     this.dropMenu = this.dropMenu.bind(this)
+     
     }
     
     studentArray = () =>{
@@ -75,14 +79,19 @@ setStudentState = ()=>{
         })
        
       };
+
+      
       
       componentDidMount = ()=>{
-        const assignmentObject = this.calculateAverageEnjoymentRate();
-        this.setState({ assignments:assignmentObject})
-        this.setState({students:data})
-        this.setState({profiles: ProfileData })
+         const assignmentObject = this.calculateAverageEnjoymentRate();
+         this.setState({ assignments:assignmentObject})
+         this.setState({students:data})
+         this.setState({profiles: ProfileData })
+        
+    
         
       }
+      
 
       handleChange = (event)=>{
        const {name,checked} = event.target;
@@ -103,15 +112,25 @@ setStudentState = ()=>{
           ? this.setState({ assignments: ratingAscending })
           : this.setState({ assignments: ratingDescending });
       };
-
       
+      dropMenu = (e)=>{
+        console.log("hello")
+         return "hello"
+     }
+
     
     render(){
     return(
         <div>
-            {console.log(ProfileData.last_name)}
         <NavBar students={this.studentArray()}/> 
-        <AppRouter students={this.studentArray()} assignments={this.assignmentArray()} data={this.state} studentData={this.state.students} onChange={this.handleChange} sortRating={this.sortRating}/>
+        <AppRouter 
+        students={this.studentArray()} 
+        assignments={this.assignmentArray()} 
+        data={this.state}  
+        studentData={this.state.students} 
+        onChange={this.handleChange} 
+        sortRating={this.sortRating}
+        handleDropMenu={this.dropMenu}/>
         </div>
     )}
 
