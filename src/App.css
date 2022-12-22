@@ -1,38 +1,102 @@
+body{
+  text-align: center;
+  color:#274564;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.nav-menu{
+  display: flex;
+  
+  justify-content: center;
+  align-items: flex-end;
+  height: 5rem;
+  background-color: #4f8bc9;
+
+}
+.nav-menu-list{
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+.nav-menu-list a{
+  color: #fff;
+  padding: 10px;
+}
+.nav-menu-list a:hover{
+  color:antiquewhite;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.dropdown-students{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  visibility: hidden;
+  
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+a{
+  text-decoration: none;
+}
+/* Sorting functions */
+.sort-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  
+}
+
+.sort-label{
+  font-weight: bold;
+}
+.sort-difficult{
+  display:flex;
+  flex-direction: column;
+  font-size: small;
+}
+
+.sort-enjoyment{
+  display:flex;
+  flex-direction: column;
+  font-size: small;
+}
+
+/* checkbox */
+
+.check-difficulty{
+  accent-color: #ffb212;
+  
+  
+}
+
+.check-difficulty input:checked{
+  outline: #fff;
+  
+  
+}
+.check-enjoyment{
+  accent-color:#4f8bc9 ;
+  
+  
+}
+
+/* student menu */
+.profile{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.profile-picture {
+  max-width: 10%;
+  height: auto;
+  border: 5px solid #274564;
+  border-radius: 50%;
+  size: 10px;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
