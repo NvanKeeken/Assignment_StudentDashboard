@@ -21,6 +21,7 @@ function AppRouter(props){
        studentData={props.studentData}
        onChange={props.onChange}
        handledropMenu={props.handledropMenu}
+       sortRating={props.sortRating}
        />} /> 
     })}
         </Routes>

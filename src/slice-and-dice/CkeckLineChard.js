@@ -2,13 +2,15 @@ import React from "react"
 
 function CheckLineChard (props){
     return(
-        <form>
+        <form >
             <label>
             <input 
             type="checkbox" 
             name="isLineChard" 
             checked={props.data.isLineChard} 
-            onChange={(e)=>props.onChange(e)}/>
+            onChange={(e)=>props.onChange(e)}
+            className="lineChard-checkbox"/>
+           
            LineChard</label>
         </form>
     )
