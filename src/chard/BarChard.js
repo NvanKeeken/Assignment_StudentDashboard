@@ -6,17 +6,14 @@ function BarChard (props){
     return(
         <VictoryChart
       domainPadding={{x:10}}
-      domain={{ x: [0, 56], y: [0.0, 5.0] }}
+      domain={{ x: [0, 56], y: [0.0, 6.0] }}
       theme={VictoryTheme.material}
       height={400}
-      width={1050}
+      width={1000}
       padding={{bottom:100,left:100, right: 100, top:10}}
       
       >
-        <VictoryTooltip
-  
-    
-       />
+      
         <VictoryAxis dependentAxis
         style={{ ticks: {stroke: "grey", size: 5},
         tickLabels: { fontSize: 8, padding: 15,textAnchor: 'begin'} }}
@@ -32,7 +29,7 @@ function BarChard (props){
       >
       {props.data.isDifficult ?
       <VictoryBar
-      labelComponent={<VictoryTooltip/>}
+      labelComponent={<VictoryTooltip />}
       labels={({ datum }) => `difficulty: ${datum.difficultyRate}`}
       style={{ data: { fill: "#ffb212" } }}
       data={props.chardData}

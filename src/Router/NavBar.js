@@ -8,8 +8,11 @@ function NavBar(props) {
       </li>
     );
   });
+
   return (
-    <div className="nav-menu">
+    
+    <nav className="nav-menu">
+      <h1> Winc Student Dashboard</h1>
       <ul
         className="nav-menu-list"
         style={{ display: "flex", listStyle: "none" }}
@@ -18,22 +21,22 @@ function NavBar(props) {
           <a href="http://localhost:3000">Home</a>
         </li>
 
+        <li className="menu-button"
+        onClick={(e) => 
+          document
+           .getElementsByClassName("dropdown-students")[0]
+           .style.visibility = "visible"}>Students</li>
+
         <div className="students-container"
         onMouseLeave={(e) => 
           document
            .getElementsByClassName("dropdown-students")[0]
            .style.visibility = "hidden"}>
              
-
-        <li className="menu-button"
-        onClick={(e) => 
-          document
-           .getElementsByClassName("dropdown-students")[0]
-           .style.visibility = "visible"}>Students</li>
           <ul className="dropdown-students">{listItem}</ul>
     </div>
       </ul>
-    </div>
+    </nav>
   );
 }
 

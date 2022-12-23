@@ -6,7 +6,7 @@ function LineChard(props) {
     <div>
       <VictoryChart
        domainPadding={{x:10}}
-       domain={{ x: [0, 56], y: [0.0, 5.0] }}
+       domain={{ x: [0, 56], y: [0.0, 6.0] }}
        theme={VictoryTheme.material}
        height={400}
        width={1050}
