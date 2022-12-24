@@ -6,12 +6,13 @@ import HomePage from "./HomePage"
 
 
 function AppRouter(props){
-   
+     
     return(
         <BrowserRouter>
         <Routes>
         <Route path="" element={<HomePage data={props.data} onChange ={props.onChange} students ={props.students} sortRating={props.sortRating}/>}/>
-      {props.students.map(student => {
+        
+       {props.students.map(student => {
        return <Route 
        path={`/${student}`} 
        key={student} 
@@ -23,7 +24,7 @@ function AppRouter(props){
        handledropMenu={props.handledropMenu}
        sortRating={props.sortRating}
        />} /> 
-    })}
+    })} 
         </Routes>
         </BrowserRouter>
     )
