@@ -8,7 +8,7 @@ import CheckLineChard from "../slice-and-dice/CkeckLineChard";
 import Profile from "./Profile";
 
 function StudentPage(props) {
-  const studentChardData = props.studentData.filter(
+  const studentChardData = props.data.data.filter(
     (object) => object.name === props.student
   );
   return (

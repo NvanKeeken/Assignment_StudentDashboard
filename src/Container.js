@@ -2,7 +2,8 @@ import React from "react";
 import data from "./data/data.json";
 import AppRouter from "./Router/AppRouter";
 import NavBar from "./Router/NavBar";
-import ProfileData from "./data/mockData";
+import ProfileData from "./data/mockData.json";
+
 
 class Container extends React.Component {
   constructor() {
@@ -11,6 +12,7 @@ class Container extends React.Component {
       data: data,
       assignments: [],
       students: [],
+      averages:[],
       profiles: [],
       isDifficult: true,
       isEnjoyment: true,
@@ -21,8 +23,14 @@ class Container extends React.Component {
     this.studentArray = this.studentArray.bind(this);
     this.assignmentArray = this.assignmentArray.bind(this);
     this.setStudentState = this.setStudentState.bind(this);
+    this.getRandomProfile =this.getRandomProfile.bind(this)
     
   }
+
+  getRandomProfile = (names) => {
+        const person = names[Math.floor(Math.random() * names.length)];
+         return person;
+       };
 
   studentArray = () => {
     const students = this.state.data.map((item) => item.name);
@@ -80,9 +88,10 @@ class Container extends React.Component {
   componentDidMount = () => {
     const assignmentObject = this.calculateAverage();
     const studentsArray = this.studentArray()
-    this.setState({ assignments: assignmentObject });
+    this.setState({assignments:this.assignmentArray()})
+    this.setState({ averages: assignmentObject });
     this.setState({ students: studentsArray });
-    this.setState({ profiles: ProfileData });
+    this.setState({ profiles: this.getRandomProfile(ProfileData) });
   };
 
   handleChange = (event) => {
@@ -93,21 +102,21 @@ class Container extends React.Component {
   };
 
   sortRating = (e, prop) => {
-    const ratingAscending = [...this.state.assignments].sort((a, b) =>
+    const ratingAscending = [...this.state.averages].sort((a, b) =>
       prop === "difficultyRate"
         ? a.difficultyRate - b.difficultyRate
         : a.enjoymentRate - b.enjoymentRate
     );
 
-    const ratingDescending = [...this.state.assignments].sort((a, b) =>
+    const ratingDescending = [...this.state.averages].sort((a, b) =>
       prop === "difficultyRate"
         ? b.difficultyRate - a.difficultyRate
         : b.enjoymentRate - a.enjoymentRate
     );
 
     e.target.value === "lowToHigh"
-      ? this.setState({ assignments: ratingAscending })
-      : this.setState({ assignments: ratingDescending });
+      ? this.setState({ averages: ratingAscending })
+      : this.setState({ averages: ratingDescending });
   };
 
   render() {
@@ -116,9 +125,7 @@ class Container extends React.Component {
         <NavBar students={this.studentArray(this.state.students)} />
         <AppRouter
           students={this.studentArray()}
-          assignments={this.assignmentArray()}
           data={this.state}
-          studentData={this.state.data}
           onChange={this.handleChange}
           sortRating={this.sortRating}
           handleDropMenu={this.dropMenu}

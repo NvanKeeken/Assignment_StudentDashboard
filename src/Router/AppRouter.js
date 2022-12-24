@@ -16,10 +16,11 @@ function AppRouter(props){
        return <Route 
        path={`/${student}`} 
        key={student} 
-       element={<StudentPage student={student} 
+       element={
+    
+    <StudentPage 
+       student={student} 
        data = {props.data}
-       students={props.students} 
-       studentData={props.studentData}
        onChange={props.onChange}
        handledropMenu={props.handledropMenu}
        sortRating={props.sortRating}
