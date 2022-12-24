@@ -18,9 +18,9 @@ function HomePage (props){
         <SortingForm chardData={props.chardData} onClick={props.sortRating} sortRating={props.sortRating}/>
         <Checkbox data={props.data} onChange={props.onChange}/>
          {props.data.isLineChard ? 
-          <LineChard data={props.data} chardData={props.data.assignments}/> 
+          <LineChard data={props.data} chardData={props.data.averages}/> 
           :
-         <BarChard data={props.data} chardData={props.data.assignments}/> 
+         <BarChard data={props.data} chardData={props.data.averages}/> 
          }
 
         

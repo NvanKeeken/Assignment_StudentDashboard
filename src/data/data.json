@@ -1,6 +1,4 @@
-// Converted Mock data from google sheets to csv file and converted that file to a json file with https://csvjson.com/csv2json
-
-export const data = [
+ [
     {
       "name": "Evelyn",
       "assignment": "SCRUM",
