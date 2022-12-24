@@ -2,8 +2,8 @@ import React from "react"
 
 function Checkbox (props){
     return(
-        <form>
-            <label>
+        <form className="checkbox-container">
+            <label className="checkbox">
             <input 
             type="checkbox" 
             name="isDifficult" 
@@ -12,7 +12,7 @@ function Checkbox (props){
             className="check-difficulty"/>
             Difficulty</label>
 
-            <label>
+            <label className="checkbox">
             <input 
             type="checkbox" 
             name="isEnjoyment" 

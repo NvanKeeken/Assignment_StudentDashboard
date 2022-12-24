@@ -94,25 +94,28 @@ body{
   font-size: small;
 }
 
+.sort-difficult input{
+  accent-color: #37618c;
+}
 .sort-enjoyment input{
-  accent-color: #4f8bc9;
+  accent-color:#37618c;
 }
 
 /* checkbox */
 
 .check-difficulty{
-  accent-color: #ffb212;
+  accent-color:#4f8bc9 ;
   
   
 }
 
 .check-difficulty input:checked{
-  outline: #fff;
+  outline: #f5f5f5;
   
   
 }
 .check-enjoyment{
-  accent-color:#4f8bc9 ;
+  accent-color:#ffb212 ;
   
   
 }
@@ -126,9 +129,6 @@ accent-color:#4f8bc9 ;
 /* student menu */
 
 .profile{
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;  */
   margin: 50px;
   margin-bottom: 0;
   background-color: #dbe7f4;
@@ -151,6 +151,24 @@ accent-color:#4f8bc9 ;
   
 }
 
+
+.studentPage-container-header{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem;
+}
+
+.studentPage-container-checkboxes{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+   margin-left: 7rem; 
+}
+
+.checkbox input {
+ margin-left: 50px;
+}
+
 /* Footer */
 
 .footer{
@@ -159,4 +177,5 @@ accent-color:#4f8bc9 ;
   background-color: #4f8bc9;
   border-top: 20px solid #37618c;
   height: 5rem;
+  padding: 2rem;
 }
