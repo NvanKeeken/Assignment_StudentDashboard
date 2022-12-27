@@ -1,5 +1,6 @@
 import React from "react"
 
+//Bonus: slice dice option 2 change barchard into line-chard with a checkbox
 function CheckLineChard (props){
     return(
         <form >

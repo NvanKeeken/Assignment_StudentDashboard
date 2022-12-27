@@ -1,5 +1,6 @@
 import React from "react"
 
+// slice dice option 1: checkboxes where you can choose to only show difficulty rating or enjoyment rating or both
 function Checkbox (props){
     return(
         <form className="checkbox-container">

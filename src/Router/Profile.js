@@ -1,5 +1,6 @@
 import React from "react";
 
+// Bonus: profile with mock data from Mockaroo 
 function Profile(props) {
   return (
     <div className="profile">

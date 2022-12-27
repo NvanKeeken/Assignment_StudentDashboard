@@ -1,74 +1,71 @@
-body{
+body {
   text-align: center;
-  color:#274564;
+  color: #274564;
 }
 
 .App {
   text-align: center;
 }
 
-
-.nav-menu{
+/* Navigation menu */
+.nav-menu {
   display: flex;
   justify-content: space-between;
   color: #f5f5f5;
   align-items: baseline;
   height: 5rem;
   background-color: #4f8bc9;
-  border-bottom: 20px solid 
-  #37618c ;
+  border-bottom: 20px solid #37618c;
 }
 
 .nav-menu h1 {
   padding-left: 20px;
 }
-  
-.nav-menu__list{
+
+.nav-menu__list {
   display: flex;
   flex-direction: row;
   justify-content: end;
   list-style: none;
-  margin:0;
+  margin: 0;
   margin-right: 10px;
   margin-top: 0;
   padding: 0;
   font-size: larger;
   height: 60px;
-  
 }
-.nav-menu__list a{
+.nav-menu__list a {
   color: #f5f5f5;
   text-decoration: none;
   padding: 10px;
 }
-.nav-menu__list a:hover{
-  color:antiquewhite;
+.nav-menu__list a:hover {
+  color: antiquewhite;
 }
 
-
-.students-menu__list{
+.students-menu__list {
   display: flex;
   flex-direction: row;
   list-style: none;
   visibility: hidden;
   text-align: center;
 }
-.students-menu__list a:hover{
-  color:#ffb212;
+.students-menu__list a:hover {
+  color: #ffb212;
 }
 
-.nav-menu__listItem{
+.nav-menu__listItem {
   margin-left: 40px;
 }
 
-.nav-menu__listItem:hover{
+.nav-menu__listItem:hover {
   color: #ffb212;
 }
-.nav-menu__listItem a{
+.nav-menu__listItem a {
   text-decoration: none;
   color: #f5f5f5;
 }
-.nav-menu__listItem a:hover{
+.nav-menu__listItem a:hover {
   color: #ffb212;
 }
 /* Sorting functions */
@@ -76,59 +73,51 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  
 }
 
-.sort-form__label{
+.sort-form__label {
   font-weight: bold;
 }
-.sort-difficult{
-  display:flex;
+.sort-difficult {
+  display: flex;
   flex-direction: column;
   font-size: small;
 }
 
-.sort-enjoyment{
-  display:flex;
+.sort-enjoyment {
+  display: flex;
   flex-direction: column;
   font-size: small;
 }
 
-.sort-difficult input{
+.sort-difficult input {
   accent-color: #37618c;
 }
-.sort-enjoyment input{
-  accent-color:#37618c;
+.sort-enjoyment input {
+  accent-color: #37618c;
 }
 
 /* checkbox */
 
-.check-difficulty{
-  accent-color:#4f8bc9 ;
-  
-  
+.check-difficulty {
+  accent-color: #4f8bc9;
 }
 
-.check-difficulty input:checked{
+.check-difficulty input:checked {
   outline: #f5f5f5;
-  
-  
 }
-.check-enjoyment{
-  accent-color:#ffb212 ;
-  
-  
+.check-enjoyment {
+  accent-color: #ffb212;
 }
 
-.lineChard-checkbox{
-margin-top: 20px;
-accent-color:#4f8bc9 ;
-
+.lineChard-checkbox {
+  margin-top: 20px;
+  accent-color: #4f8bc9;
 }
 
-/* student menu */
+/* student menu from navigation bar */
 
-.profile{
+.profile {
   margin: 50px;
   margin-bottom: 0;
   background-color: #dbe7f4;
@@ -140,59 +129,37 @@ accent-color:#4f8bc9 ;
   text-align: left;
 }
 
-
-
 .profile__picture {
- text-align: center;
+  text-align: center;
   height: auto;
   border: 4px solid #f5f5f5;
   border-radius: 50%;
-  
-  
 }
 
-
-.studentPage-container__head{
+.studentPage-container__head {
   display: flex;
   flex-direction: row;
   margin-bottom: 2rem;
 }
 
-.studentPage-container__checkboxes{
+.studentPage-container__checkboxes {
   display: flex;
   flex-direction: column;
   justify-content: center;
-   margin-left: 7rem; 
+  margin-left: 7rem;
 }
 
 .checkbox input {
- margin-left: 50px;
+  margin-left: 50px;
 }
 
 /* Footer */
 
-.footer{
+.footer {
   text-align: center;
-  color:#f5f5f5;
+  color: #f5f5f5;
   background-color: #4f8bc9;
   border-top: 20px solid #37618c;
   height: 5rem;
   padding: 2rem;
-}
-
-
-@media only screen and (max-width: 768px) {
-  .nav-menu{
-   flex-direction: column;
-  }
-  .nav-menu__list{
-    justify-content: center;
-  }
-  .nav-menu__listItem{
-    flex-direction: column;
-  }
-  .student-menu__list{
-    flex-direction: column;
-  }
-  
 }

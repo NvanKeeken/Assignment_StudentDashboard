@@ -1,5 +1,6 @@
 import React from "react";
 
+// Bonus: sorting difficultyRate and EnjoymentRate
 function SortingForm(props) {
   return (
     <form
