@@ -79,7 +79,7 @@ body{
   
 }
 
-.sort-label{
+.sort-form__label{
   font-weight: bold;
 }
 .sort-difficult{
@@ -142,7 +142,7 @@ accent-color:#4f8bc9 ;
 
 
 
-.profile-picture {
+.profile__picture {
  text-align: center;
   height: auto;
   border: 4px solid #f5f5f5;
@@ -152,13 +152,13 @@ accent-color:#4f8bc9 ;
 }
 
 
-.studentPage-container-header{
+.studentPage-container__head{
   display: flex;
   flex-direction: row;
   margin-bottom: 2rem;
 }
 
-.studentPage-container-checkboxes{
+.studentPage-container__checkboxes{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -178,4 +178,21 @@ accent-color:#4f8bc9 ;
   border-top: 20px solid #37618c;
   height: 5rem;
   padding: 2rem;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .nav-menu{
+   flex-direction: column;
+  }
+  .nav-menu__list{
+    justify-content: center;
+  }
+  .nav-menu__listItem{
+    flex-direction: column;
+  }
+  .student-menu__list{
+    flex-direction: column;
+  }
+  
 }

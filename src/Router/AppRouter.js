@@ -18,10 +18,9 @@ function AppRouter(props) {
             />
           }
         />
-
-        {/* { for each student a  route is made to their own page} */}
+    
         {props.students.map((student) => {
-          <Route
+          return <Route
             path={`/${student}`}
             key={student}
             element={

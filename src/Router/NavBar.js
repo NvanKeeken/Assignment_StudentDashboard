@@ -1,40 +1,27 @@
 import react from "react";
+import StudentMenu from "./StudentMenu";
 
 function NavBar(props) {
-  const listItem = props.students.map((student) => {
-    return (
-      <li key={student}>
-        <a href={`http://localhost:3000/${student}`}>{student}</a>
-      </li>
-    );
-  });
-
   return (
-    
     <nav className="nav-menu">
       <h1> Winc Student Dashboard</h1>
-      <ul
-        className="nav-menu-list"
-        style={{ display: "flex", listStyle: "none" }}
-      >
-        <li className="menu-button">
+
+      <ul className="nav-menu__list">
+        <li className="nav-menu__listItem">
           <a href="http://localhost:3000">Home</a>
         </li>
 
-        <li className="menu-button"
-        onClick={(e) => 
-          document
-           .getElementsByClassName("dropdown-students")[0]
-           .style.visibility = "visible"}>Students</li>
-
-        <div className="students-container"
-        onMouseLeave={(e) => 
-          document
-           .getElementsByClassName("dropdown-students")[0]
-           .style.visibility = "hidden"}>
-             
-          <ul className="dropdown-students">{listItem}</ul>
-    </div>
+        <li
+          className="nav-menu__listItem"
+          onClick={(e) =>
+            (document.getElementsByClassName(
+              "students-menu__list"
+            )[0].style.visibility = "visible")
+          }
+        >
+          Students
+        </li>
+        <StudentMenu students={props.students} />
       </ul>
     </nav>
   );
