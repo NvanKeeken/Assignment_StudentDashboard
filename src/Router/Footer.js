@@ -1,12 +1,9 @@
 import react from "react";
 
-function Footer(props) {
- 
-
+function Footer() {
   return (
-    
     <footer className="footer">
-     <p>Winc Academy - 2022</p>
+      <p>Winc Academy - 2022</p>
     </footer>
   );
 }
