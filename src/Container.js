@@ -17,12 +17,14 @@ class Container extends React.Component {
       isDifficult: true,
       isEnjoyment: true,
       isLineChard: false,
+      isStudent: [],
     };
     this.calculateAverage = this.calculateAverage.bind(this);
     this.studentArray = this.studentArray.bind(this);
     this.assignmentArray = this.assignmentArray.bind(this);
     this.setStudentState = this.setStudentState.bind(this);
     this.getRandomProfile = this.getRandomProfile.bind(this);
+    this.handeleStudentChange = this.handeleStudentChange.bind(this)
   }
 
   // Gets random profile from the mockdata from mockaroo in mockData.js that gets used in Studenpage
@@ -98,16 +100,23 @@ class Container extends React.Component {
     this.setState({ averages: assignmentObject });
     this.setState({ students: studentsArray });
     this.setState({ profiles: this.getRandomProfile(ProfileData) });
+
   };
 
   // This function gets called when checkbox is checked and unchecked and sets state to checked property
   handleChange = (event) => {
+    console.log(event.target.checked)
     const { name, checked } = event.target;
     this.setState({
       [name]: checked,
     });
   };
-
+  
+  handeleStudentChange=(event)=>{
+  const isChecked = event.target.checked
+  const {name, checked} =event.target
+  console.log(checked)
+  }
   //This function is called when the average difficulty rating or enjoyment ratig is sorted low to high or high to low
   sortRating = (e, prop) => {
     // checks if the difficulty of enjoyment rating needs to be sorted from low to high
@@ -140,6 +149,7 @@ class Container extends React.Component {
           onChange={this.handleChange}
           sortRating={this.sortRating}
           handleDropMenu={this.dropMenu}
+          studentChange={this.handeleStudentChange}
         />
       </div>
     );

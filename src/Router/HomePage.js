@@ -6,12 +6,13 @@ import CheckLineChard from "../slice-and-dice/CkeckLineChard";
 import SortingForm from "../sort/SortingForm";
 
 import Footer from "./Footer";
+import StudentCheckbox from "../slice-and-dice/StudentCheckbox";
 
 function HomePage(props) {
   return (
     <div>
       <CheckLineChard data={props.data} onChange={props.onChange} />
-
+      <StudentCheckbox data={props.data} onChange={props.studentChange}/>
       <h2>Average per assignment</h2>
       <SortingForm
         chardData={props.chardData}

@@ -15,6 +15,7 @@ function AppRouter(props) {
               onChange={props.onChange}
               students={props.students}
               sortRating={props.sortRating}
+              studentChange={props.studentChange}
             />
           }
         />
