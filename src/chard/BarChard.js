@@ -51,7 +51,9 @@ function BarChard(props) {
                 }}
               />
             }
-            labels={({ datum }) => `${datum.assignment} difficulty: ${datum.difficultyRate}`}
+            labels={({ datum }) =>
+              `${datum.assignment} difficulty: ${datum.difficultyRate}`
+            }
             style={{ data: { fill: "#4f8bc9" } }}
             data={props.chardData}
             x={"assignment"}
@@ -72,7 +74,9 @@ function BarChard(props) {
                 }}
               />
             }
-            labels={({ datum }) => `${datum.assignment} enjoyment: ${datum.enjoymentRate}`}
+            labels={({ datum }) =>
+              `${datum.assignment} enjoyment: ${datum.enjoymentRate}`
+            }
             style={{ data: { fill: "#ffb212" } }}
             x={"assignment"}
             y={"enjoymentRate"}

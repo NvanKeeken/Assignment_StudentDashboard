@@ -1,5 +1,10 @@
 import React from "react";
-import { VictoryLine, VictoryChart, VictoryAxis, VictoryTheme } from "victory";
+import {
+  VictoryLine,
+  VictoryChart,
+  VictoryAxis,
+  VictoryTheme,
+} from "victory";
 
 function LineChard(props) {
   return (
@@ -32,9 +37,9 @@ function LineChard(props) {
         />
         {props.data.isDifficult ? (
           <VictoryLine
+            data={props.chardData}
             interpolation={"linear"}
             style={{ data: { stroke: "#ffb212" }, strokeWidth: 1 }}
-            data={props.chardData}
             x={"assignment"}
             y={"difficultyRate"}
           />
