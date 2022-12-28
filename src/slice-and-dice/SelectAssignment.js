@@ -1,5 +1,4 @@
 import React from "react";
-import { Bar } from "victory";
 
 function SelectAssignment(props) {
   const assignmentOptions = props.data.assignments.map((assignment) => (

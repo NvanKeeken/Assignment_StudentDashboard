@@ -1,7 +1,6 @@
 import react from "react";
 import BarChard from "../chard/BarChard";
-import Checkbox from "../slice-and-dice/Checkbox";
-import Footer from "./Footer";
+import Checkbox from "../slice-and-dice/Checkbox"
 import LineChard from "../chard/LineChard";
 import CheckLineChard from "../slice-and-dice/CkeckLineChard";
 import Profile from "./Profile";
@@ -20,7 +19,7 @@ function StudentPage(props) {
         <div className="studentPage-container__checkboxes">
           <CheckLineChard data={props.data} onChange={props.onChange} />
           <h2>
-            Rating from:
+            Rating per student:
             {` ${props.student} ${props.data.profiles.last_name}`}
           </h2>
           <Checkbox data={props.data} onChange={props.onChange} />
