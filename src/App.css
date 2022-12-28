@@ -19,7 +19,7 @@ body {
 }
 
 .nav-menu h1 {
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
 .nav-menu__list {
@@ -151,6 +151,23 @@ body {
 
 .checkbox input {
   margin-left: 50px;
+}
+
+/* AssignmentPage */
+.empty-div {
+  height: 900px;
+  width: 900px;
+  padding: 10px 100px 150px 100px 150px;
+}
+
+.assignment-dropdown {
+  background-color: #4f8bc9;
+  border: 4px solid #37618c;
+  border-radius: 10px;
+  padding: 10px;
+  color: #f5f5f5;
+  margin-top: 10px;
+  font-size: medium;
 }
 
 /* Footer */

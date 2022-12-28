@@ -8,14 +8,14 @@ import {
   VictoryTooltip,
 } from "victory";
 
-function BarChard(props) {
+function AssignmentChard(props) {
   return (
     <VictoryChart
-      domainPadding={{ x: 10 }}
-      domain={{ x: [0, 56], y: [0.0, 5.0] }}
+      domainPadding={{ x: 40 }}
+      domain={{ x: [0, 10], y: [0.0, 5.0] }}
       theme={VictoryTheme.material}
       height={400}
-      width={1050}
+      width={800}
       padding={{ bottom: 150, left: 100, right: 100, top: 10 }}
     >
       <VictoryAxis
@@ -37,7 +37,7 @@ function BarChard(props) {
         }}
       />
 
-      <VictoryGroup offset={6} colorScale={"qualitative"}>
+      <VictoryGroup offset={20} colorScale={"qualitative"}>
         {props.data.isDifficult ? (
           <VictoryBar
             labelComponent={
@@ -51,7 +51,7 @@ function BarChard(props) {
               />
             }
             labels={({ datum }) =>
-              `${datum.assignment} difficulty: ${datum.difficultyRate}`
+              `${datum.name} difficulty: ${datum.difficultyRate}`
             }
             style={{ data: { fill: "#4f8bc9" } }}
             data={props.chardData}
@@ -74,7 +74,7 @@ function BarChard(props) {
               />
             }
             labels={({ datum }) =>
-              `${datum.assignment} enjoyment: ${datum.enjoymentRate}`
+              `${datum.name} enjoyment: ${datum.enjoymentRate}`
             }
             style={{ data: { fill: "#ffb212" } }}
             x={props.xAs}
@@ -86,4 +86,4 @@ function BarChard(props) {
   );
 }
 
-export default BarChard;
+export default AssignmentChard;

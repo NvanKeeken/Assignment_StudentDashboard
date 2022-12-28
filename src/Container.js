@@ -3,6 +3,7 @@ import data from "./data/data.json";
 import AppRouter from "./Router/AppRouter";
 import NavBar from "./Router/NavBar";
 import ProfileData from "./data/mockData.json";
+import Footer from "./Router/Footer";
 
 // This is the container component that holds state
 class Container extends React.Component {
@@ -13,6 +14,7 @@ class Container extends React.Component {
       assignments: [],
       students: [],
       averages: [],
+      chosenAssignment: [],
       profiles: [],
       isDifficult: true,
       isEnjoyment: true,
@@ -23,6 +25,7 @@ class Container extends React.Component {
     this.assignmentArray = this.assignmentArray.bind(this);
     this.setStudentState = this.setStudentState.bind(this);
     this.getRandomProfile = this.getRandomProfile.bind(this);
+    this.handleChangeAssignment = this.handleChangeAssignment.bind(this);
   }
 
   // Gets random profile from the mockdata from mockaroo in mockData.js that gets used in Studenpage
@@ -108,6 +111,13 @@ class Container extends React.Component {
     });
   };
 
+  // This function gets called when a assignment is chosen on the assignment page, and filters data to the chosen assignment and set that as state.
+  handleChangeAssignment = (event) => {
+    const updatedState = [...this.state.data]
+      .filter((object) => object.assignment === event.target.value)
+      .map((object) => object);
+    this.setState({ chosenAssignment: updatedState });
+  };
   //This function is called when the average difficulty rating or enjoyment ratig is sorted low to high or high to low
   sortRating = (e, prop) => {
     // checks if the difficulty of enjoyment rating needs to be sorted from low to high
@@ -139,8 +149,9 @@ class Container extends React.Component {
           data={this.state}
           onChange={this.handleChange}
           sortRating={this.sortRating}
-          handleDropMenu={this.dropMenu}
+          handleChangeAssignment={this.handleChangeAssignment}
         />
+        <Footer />
       </div>
     );
   }

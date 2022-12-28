@@ -23,10 +23,12 @@ function HomePage(props) {
       {props.data.isLineChard ? ( // If IsLineChard box is checked it shows a LineChard else a Barchard
         <LineChard data={props.data} chardData={props.data.averages} />
       ) : (
-        <BarChard data={props.data} chardData={props.data.averages} />
+        <BarChard
+          xAs={"assignment"}
+          data={props.data}
+          chardData={props.data.averages}
+        />
       )}
-
-      <Footer />
     </div>
   );
 }

@@ -11,6 +11,10 @@ function NavBar(props) {
           <a href="http://localhost:3000">Home</a>
         </li>
 
+        <li className="nav-menu__listItem">
+          <a href="http://localhost:3000/assignments">Assignments</a>
+        </li>
+
         <li
           className="nav-menu__listItem"
           onClick={(e) =>
